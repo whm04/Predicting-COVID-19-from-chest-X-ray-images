@@ -9,7 +9,7 @@ app = Flask(__name__)
 def homepage():
     
 
-    return render_template('index.html')
+    return render_template('index.html', title = "Welcome", paragraph = 'Lorem ipsum dolor sit amet')
  
 
 if __name__ == '__main__':
