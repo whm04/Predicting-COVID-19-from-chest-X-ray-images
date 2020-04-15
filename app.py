@@ -45,7 +45,7 @@ def login():
        
         
     
-    return render_template('login.html')
+    return render_template('index.html')
 
 
 
