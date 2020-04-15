@@ -1,12 +1,7 @@
 
 from flask import Flask, render_template, request
 
-import cv2
-import numpy as np
 
-
-from tensorflow.keras.preprocessing.image import img_to_array
-from tensorflow.keras.models import load_model
 
 def predict(image):
     
@@ -24,8 +19,15 @@ def homepage():
 
     return render_template('index.html', title = "Welcome", paragraph = 'Lorem ipsum dolor sit amet')
 
-
+@app.route('/predict', methods = ['GET', 'POST'])
 def upload_file():
+    
+    import cv2
+    import numpy as np
+
+
+    from tensorflow.keras.preprocessing.image import img_to_array
+    from tensorflow.keras.models import load_model
     
     
     
