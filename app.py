@@ -1,7 +1,7 @@
 
 import cv2
 import numpy as np
-from PIL import Image
+
 import cv2
 
 from flask import Flask, render_template, request
