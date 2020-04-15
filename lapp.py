@@ -5,11 +5,11 @@ from PIL import Image
 import cv2
 
 from flask import Flask, render_template, request
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 import os
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
-model = load_model('/content/drive/My Drive/HackZone/covid19.model')
+model = load_model('covid19.model')
 # summarize model.
 #model.summary()
 def predict(image):
@@ -23,7 +23,7 @@ def predict(image):
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-run_with_ngrok(app)
+#run_with_ngrok(app)
 @app.route('/', methods=['post', 'get'])
 def login():
     
@@ -91,4 +91,4 @@ def upload_file():
     
     
 if __name__=='__main__':
-    app.run()
+    app.run(debug=True, use_reloader=True)
