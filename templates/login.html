@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+
+
+
+    <style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+h4 {
+  color: #ADFF2F;
+}
+h4 .name {
+color: #ADFF2F;
+}
+h1 {
+  font-size: 12pt;
+  color: #000066;
+};
+
+</style>
+	</head>
+
+    <BODY>
+      <table>
+        <tr>
+          <td>
+       <form action = "/predict" method = "POST" 
+         enctype = "multipart/form-data">
+
+            <input type='file' id="fileUpload" name="file" />
+            <br>
+              <canvas id="canvas" width="400" height="400"></canvas>
+             </td>
+             <tr><td>
+              <input type = "submit" value="predict" id="togglee" />
+        </form>
+        <br>
+         whm
+        <br> 
+        stay at home
+          </td></tr></table>
+       
+       <table>
+         <tr>
+            <td>
+                  {% if message %}
+                    <h1  class="name">  {{ message }} </h1>
+                  {% endif %}
+            </td>
+           
+           <td width="20">
+           </td>
+            
+         </tr>
+
+         
+
+
+       </table>
+        
+        
+ 
+    
+
+<script type="text/javascript">
+
+function el(id){return document.getElementById(id);} // Get elem by ID
+
+var canvas  = el("canvas");
+var context = canvas.getContext("2d");
+document.getElementById('togglee').style.visibility = 'hidden';
+function readImage() {
+    
+    if ( this.files && this.files[0] ) {  document.getElementById('togglee').style.visibility = 'visible';
+        var FR= new FileReader();
+        FR.onload = function(e) {
+           var img = new Image();
+           img.addEventListener("load", function() {
+             context.drawImage(img, 0, 0,400,400);
+           });
+           img.src = e.target.result;
+           
+           
+        };       
+        FR.readAsDataURL( this.files[0] );
+    }
+}
+
+
+el("fileUpload").addEventListener("change", readImage, false);
+
+
+ </script>
+
+
+
+
+   
+
+
+
+
+
+
+
+    </BODY>
+</HTML>
