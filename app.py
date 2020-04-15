@@ -6,7 +6,7 @@ import cv2
 
 from flask import Flask, render_template, request
 #from flask_ngrok import run_with_ngrok
-import os
+#import os
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 #model = load_model('covid19.model')
