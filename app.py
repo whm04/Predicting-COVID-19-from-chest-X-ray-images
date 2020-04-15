@@ -60,7 +60,7 @@ def upload_file():
         #print(image.shape)
       #
      
-    return render_template('predict.html',, title = "hey Welcome", paragraph = 'Lorem ipsum dolor sit amet',positive=positive,negative=negative,user_image="static/a.jpg")
+    return render_template('predict.html', title = "hey Welcome", paragraph = 'Lorem ipsum dolor sit amet',positive=positive,negative=negative,user_image="static/a.jpg")
 
 
 if __name__ == '__main__':
