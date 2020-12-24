@@ -23,7 +23,7 @@ app = Flask(__name__)
 def homepage():
     
 
-    return render_template('index.html', title = "Welcome", paragraph = 'Lorem ipsum dolor sit amet')
+    return render_template('index.html')
 
 @app.route('/predict', methods = ['GET', 'POST'])
 def upload_file():
@@ -48,7 +48,7 @@ def upload_file():
         positive,negative=predict(image)    
         
      
-    return render_template('predict.html', title = "hey Welcome", paragraph = 'Lorem ipsum dolor sit amet',positive=positive,negative=negative,user_image="static/a.jpg")
+    return render_template('predict.html', positive=positive,negative=negative,user_image="static/a.jpg")
 
 
 if __name__ == '__main__':
