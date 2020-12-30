@@ -1,4 +1,4 @@
-you can see also this project made with socketio
+you can also see another version of this project with socket io
 https://github.com/whm04/Predicting-COVID-19-from-chest-X-ray-image-socketio
 
 
